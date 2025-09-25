@@ -30,6 +30,54 @@ namespace Ciklusok_Feladat2
             }
 
             Console.WriteLine("---------------------------------------------");
+
+            //Második feladat
+            Console.WriteLine("Második feladat:");
+            List<int> szamok = new List<int>();
+            int szam;
+
+            
+            Console.Write("Adjon meg egy számot: ");
+            szam = int.Parse(Console.ReadLine());
+
+            while (szam != 0)
+            {
+                szamok.Add(szam);
+
+                Console.Write("Adjon meg egy számot: ");
+                szam = int.Parse(Console.ReadLine());
+            }
+
+            
+            int maxSzam = 0;
+            int maxDb = 0;
+
+            for (int i = 0; i < szamok.Count; i++)
+            {
+                int aktualis = szamok[i];
+                int db = 0;
+
+                
+                for (int j = 0; j < szamok.Count; j++)
+                {
+                    if (szamok[j] == aktualis)
+                    {
+                        db++;
+                    }
+                }
+
+                
+                if (db > maxDb)
+                {
+                    maxDb = db;
+                    maxSzam = aktualis;
+                }
+            }
+
+            Console.WriteLine($"A legtöbbször beírt szám: {maxSzam}, ennyiszer: {maxDb}");
+
+            Console.WriteLine("---------------------------------------------");
+
         }
     }
 }
