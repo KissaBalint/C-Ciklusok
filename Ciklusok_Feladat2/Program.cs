@@ -208,8 +208,49 @@ namespace Ciklusok_Feladat2
 
             Console.WriteLine("---------------------------------------------");
 
+            //Hetedik feladat
+            Console.WriteLine("Hetedik feladat:");
+            for (int i = 1; i <= 10; i++)
+            {
+                Console.Write($"{i}. szám: ");
+                int pozneg = int.Parse(Console.ReadLine());
 
+                if (pozneg > 0)
+                {
+                    Console.WriteLine("A szám pozitív.");
+                }
+                else if (pozneg < 0)
+                {
+                    Console.WriteLine("A szám negatív.");
+                }
+                else
+                {
+                    Console.WriteLine("A szám nulla.");
+                }
+
+                if (pozneg % 2 == 0)
+                {
+                    Console.WriteLine("Páros szám.");
+                }
+                else
+                {
+                    Console.WriteLine("Páratlan szám.");
+                }
+
+                if (pozneg % 3 == 0)
+                {
+                    Console.WriteLine("Osztható 3-mal.");
+                }
+                else
+                {
+                    Console.WriteLine("Nem osztható 3-mal.");
+                }
+            }
+
+            Console.WriteLine("---------------------------------------------");
 
         }
+
+    
     }
 }
