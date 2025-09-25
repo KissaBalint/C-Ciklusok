@@ -1,0 +1,7 @@
+C:\Users\KissBa\source\repos\Ciklusok_Feladat2\bin\Debug\Ciklusok_Feladat2.exe.config
+C:\Users\KissBa\source\repos\Ciklusok_Feladat2\bin\Debug\Ciklusok_Feladat2.exe
+C:\Users\KissBa\source\repos\Ciklusok_Feladat2\bin\Debug\Ciklusok_Feladat2.pdb
+C:\Users\KissBa\source\repos\Ciklusok_Feladat2\obj\Debug\Ciklusok_Feladat2.csproj.AssemblyReference.cache
+C:\Users\KissBa\source\repos\Ciklusok_Feladat2\obj\Debug\Ciklusok_Feladat2.csproj.CoreCompileInputs.cache
+C:\Users\KissBa\source\repos\Ciklusok_Feladat2\obj\Debug\Ciklusok_Feladat2.exe
+C:\Users\KissBa\source\repos\Ciklusok_Feladat2\obj\Debug\Ciklusok_Feladat2.pdb
