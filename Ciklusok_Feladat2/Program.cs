@@ -17,11 +17,11 @@ namespace Ciklusok_Feladat2
             Console.Write("Kérem az második számot:");
             int szam2 = int.Parse(Console.ReadLine());
 
-           
+
 
             if (szam1 > szam2)
             {
-                Console.WriteLine($"A nagyobb szám a: {szam1} és a különbségük {szam1-szam2}");
+                Console.WriteLine($"A nagyobb szám a: {szam1} és a különbségük {szam1 - szam2}");
 
             }
             else
@@ -36,7 +36,7 @@ namespace Ciklusok_Feladat2
             List<int> szamok = new List<int>();
             int szam;
 
-            
+
             Console.Write("Adjon meg egy számot: ");
             szam = int.Parse(Console.ReadLine());
 
@@ -48,7 +48,7 @@ namespace Ciklusok_Feladat2
                 szam = int.Parse(Console.ReadLine());
             }
 
-            
+
             int maxSzam = 0;
             int maxDb = 0;
 
@@ -57,7 +57,7 @@ namespace Ciklusok_Feladat2
                 int aktualis = szamok[i];
                 int db = 0;
 
-                
+
                 for (int j = 0; j < szamok.Count; j++)
                 {
                     if (szamok[j] == aktualis)
@@ -66,7 +66,7 @@ namespace Ciklusok_Feladat2
                     }
                 }
 
-                
+
                 if (db > maxDb)
                 {
                     maxDb = db;
@@ -82,20 +82,20 @@ namespace Ciklusok_Feladat2
             Console.WriteLine("Harmadik feladat:");
             List<int> ParosPart = new List<int>();
 
-            for (int i = 1;i <= 10; i++)
+            for (int i = 1; i <= 10; i++)
             {
                 Console.Write($"Adja meg az {i}. számot:");
                 szam = int.Parse(Console.ReadLine());
                 ParosPart.Add(szam);
             }
-                
+
             int pardb = 0;
             int partdb = 0;
 
 
             foreach (int sam in ParosPart)
             {
-                if ( sam % 2 == 0)
+                if (sam % 2 == 0)
                 {
                     pardb += 1;
                 }
@@ -116,9 +116,9 @@ namespace Ciklusok_Feladat2
             Console.Write("Adjon meg egy szót:");
             string szo1 = Console.ReadLine();
 
-            while ( szo1 != "vége")
+            while (szo1 != "vége")
             {
-                if ( szo1.Length >= 5)
+                if (szo1.Length >= 5)
                 {
                     szodb += 1;
                 }
@@ -132,11 +132,11 @@ namespace Ciklusok_Feladat2
             //Ötödik feladat
             Console.WriteLine("Ötödik feladat:");
             Console.Write("Adja meg az osztályzatot:");
-            
+
             List<int> osztalyzatok = new List<int>();
 
             int bekert_osztalyzat = int.Parse(Console.ReadLine());
-            while ( bekert_osztalyzat != -1)
+            while (bekert_osztalyzat != -1)
             {
 
                 osztalyzatok.Add(bekert_osztalyzat);
@@ -250,7 +250,7 @@ namespace Ciklusok_Feladat2
             Console.WriteLine("---------------------------------------------");
 
             Console.Write("Adja meg a jelszót:");
-            
+
             string jelszo1 = Console.ReadLine();
             Console.Write("Adja meg újra a jelszót:");
             string jelszo2 = Console.ReadLine();
@@ -261,18 +261,50 @@ namespace Ciklusok_Feladat2
                 Console.WriteLine(new string(szoveg.Reverse().ToArray()));
             }
 
-            else {
+            else
+            {
                 Console.WriteLine("Nem egyezik a jelszó!");
             }
 
             Console.WriteLine("---------------------------------------------");
 
+            //Kilencedik feladat
 
+            List<int> primszamok = new List<int>();
+
+            int db_prim = 0;
+
+            for (int i = 1; i <= 10; i++)
+            {
+                for (int j = 1; j <= 10; j++)
+                {
+                    if (i % j == 0)
+                    {
+                        db_prim++;
+                    }
+                }
+
+                if (db_prim <= 2)
+                {
+                    primszamok.Add(i);
+                }
+
+                db_prim = 0;
+            }
+
+            foreach (var item in primszamok)
+            {
+                Console.WriteLine(item);
+
+            }
+            Console.WriteLine($"{primszamok.Count} prím szám van.");
+
+            Console.WriteLine("---------------------------------------------");
 
 
 
         }
 
-    
+
     }
 }
