@@ -249,6 +249,28 @@ namespace Ciklusok_Feladat2
 
             Console.WriteLine("---------------------------------------------");
 
+            Console.Write("Adja meg a jelszót:");
+            
+            string jelszo1 = Console.ReadLine();
+            Console.Write("Adja meg újra a jelszót:");
+            string jelszo2 = Console.ReadLine();
+
+            if (jelszo1 == jelszo2)
+            {
+                string szoveg = Console.ReadLine();
+                Console.WriteLine(new string(szoveg.Reverse().ToArray()));
+            }
+
+            else {
+                Console.WriteLine("Nem egyezik a jelszó!");
+            }
+
+            Console.WriteLine("---------------------------------------------");
+
+
+
+
+
         }
 
     
