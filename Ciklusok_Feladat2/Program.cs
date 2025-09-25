@@ -78,6 +78,36 @@ namespace Ciklusok_Feladat2
 
             Console.WriteLine("---------------------------------------------");
 
+            //Harmadik feladat
+            Console.WriteLine("Harmadik feladat:");
+            List<int> ParosPart = new List<int>();
+
+            for (int i = 1;i <= 10; i++)
+            {
+                Console.Write($"Adja meg az {i}. számot:");
+                szam = int.Parse(Console.ReadLine());
+                ParosPart.Add(szam);
+            }
+                
+            int pardb = 0;
+            int partdb = 0;
+
+
+            foreach (int sam in ParosPart)
+            {
+                if ( sam % 2 == 0)
+                {
+                    pardb += 1;
+                }
+                else
+                {
+                    partdb += 1;
+                }
+            }
+            Console.WriteLine($"{pardb} db páros szám van és {partdb} páratlanszám van.");
+
+            Console.WriteLine("---------------------------------------------");
+
         }
     }
 }
