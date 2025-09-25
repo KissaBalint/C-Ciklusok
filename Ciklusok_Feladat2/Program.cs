@@ -128,6 +128,63 @@ namespace Ciklusok_Feladat2
             Console.WriteLine($"{szodb} db 5 karakternél hosszabb szó van.");
 
             Console.WriteLine("---------------------------------------------");
+
+            //Ötödik feladat
+            Console.WriteLine("Ötödik feladat:");
+            Console.Write("Adja meg az osztályzatot:");
+            
+            List<int> osztalyzatok = new List<int>();
+
+            int bekert_osztalyzat = int.Parse(Console.ReadLine());
+            while ( bekert_osztalyzat != -1)
+            {
+
+                osztalyzatok.Add(bekert_osztalyzat);
+                Console.Write("Adjon meg még egy osztályzatot:");
+                bekert_osztalyzat = int.Parse(Console.ReadLine());
+
+            }
+
+            int jegy1 = 0;
+            int jegy2 = 0;
+            int jegy3 = 0;
+            int jegy4 = 0;
+            int jegy5 = 0;
+
+            foreach (int osztalyzat in osztalyzatok)
+            {
+                if (osztalyzat == 1)
+                {
+                    jegy1 += 1;
+                }
+                else if (osztalyzat == 2)
+                {
+                    jegy2 += 1;
+                }
+                else if (osztalyzat == 3)
+                {
+                    jegy3 += 1;
+                }
+                else if (osztalyzat == 4)
+                {
+                    jegy4 += 1;
+                }
+                else if (osztalyzat == 5)
+                {
+                    jegy5 += 1;
+                }
+            }
+
+            Console.WriteLine($"1 osztályzatból {jegy1} db");
+            Console.WriteLine($"2 osztályzatból {jegy2} db");
+            Console.WriteLine($"3 osztályzatból {jegy3} db");
+            Console.WriteLine($"4 osztályzatból {jegy4} db");
+            Console.WriteLine($"5 osztályzatból {jegy5} db");
+
+            Console.WriteLine($"Az átlaga az osztályzatoknak: {osztalyzatok.Average()}");
+            Console.WriteLine("---------------------------------------------");
+
+
         }
     }
 }
