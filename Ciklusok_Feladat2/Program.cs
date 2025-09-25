@@ -108,6 +108,26 @@ namespace Ciklusok_Feladat2
 
             Console.WriteLine("---------------------------------------------");
 
+            //Negyedik feladat
+            Console.WriteLine("Negyedik feladat:");
+
+            int szodb = 0;
+
+            Console.Write("Adjon meg egy szót:");
+            string szo1 = Console.ReadLine();
+
+            while ( szo1 != "vége")
+            {
+                if ( szo1.Length >= 5)
+                {
+                    szodb += 1;
+                }
+                Console.Write("Adjon meg még egy szót:");
+                szo1 = Console.ReadLine();
+            }
+            Console.WriteLine($"{szodb} db 5 karakternél hosszabb szó van.");
+
+            Console.WriteLine("---------------------------------------------");
         }
     }
 }
