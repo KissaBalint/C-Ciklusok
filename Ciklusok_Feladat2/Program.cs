@@ -301,9 +301,62 @@ namespace Ciklusok_Feladat2
 
             Console.WriteLine("---------------------------------------------");
 
+            //Titedik feladat
+            Console.WriteLine("Tizedik feladat: ");
+            int ember_pont = 0;
+            int gep_pont = 0;
+            for (int i = 1; i <= 5; i++)
+            {
 
+                Random rnd = new Random();
+                int gep_valaszt = rnd.Next(1, 4);
+                string gep = "";
+                Console.Write("Kő, papír vagy olló:");
+                string ember = Console.ReadLine().ToLower();
+                
+                if (gep_valaszt == 1)
+                {
+                    gep = "Kő";
+                }
+                else if (gep_valaszt == 2)
+                {
+                    gep = "Papír";
+                }
+                else
+                {
+                    gep = "Olló";
+                }
 
+                if (ember == "kő" && gep == "Olló" || ember == "papír" && gep == "Kő" || ember == "olló" && gep == "Papír")
+                {
+                    Console.WriteLine($"A gép {gep} választott ezért megnyerted ezt a  kört!");
+                    ember_pont += 1;
+                }
+                else if (gep == "Kő" && ember == "olló" || gep == "Papír" && ember == "kő" || gep == "Olló" && ember == "papír")
+                {
+                    Console.WriteLine($"A gép {gep} választott gép nyerte ezt a kört!");
+                    gep_pont += 1;
+                }
+                else
+                {
+                    Console.WriteLine("Döntetlen");
+                }
+
+            }
+
+            if (ember_pont > gep_pont)
+            {
+                Console.WriteLine($"Nyertél ennyi ponttal: {ember_pont}");
+            }
+            else
+            {
+                Console.WriteLine($"A gép nyert ennyi ponttal: {gep_pont}");
+            }
         }
+
+
+
+        
 
 
     }
