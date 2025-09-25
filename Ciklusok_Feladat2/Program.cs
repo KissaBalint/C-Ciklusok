@@ -184,6 +184,31 @@ namespace Ciklusok_Feladat2
             Console.WriteLine($"Az átlaga az osztályzatoknak: {osztalyzatok.Average()}");
             Console.WriteLine("---------------------------------------------");
 
+            //Hatodik feladat
+            Console.WriteLine("Hatodik feladat:");
+            Console.Write("Adj meg egy számot 1 és 10 között: ");
+            int szams = int.Parse(Console.ReadLine());
+
+            if (szams < 1 || szams > 10)
+            {
+                Console.WriteLine("Hibás szám! Csak 1 és 10 közötti számot adhatsz meg.");
+                return;
+            }
+
+            Console.WriteLine($"\nA(z) {szams} szorzótáblájának 3-mal osztható elemei:");
+
+            for (int i = 1; i <= 10; i++)
+            {
+                int szorzat = szams * i;
+                if (szorzat % 3 == 0)
+                {
+                    Console.WriteLine($"{szams} × {i} = {szorzat}");
+                }
+            }
+
+            Console.WriteLine("---------------------------------------------");
+
+
 
         }
     }
