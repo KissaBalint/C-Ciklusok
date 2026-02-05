@@ -45,6 +45,21 @@ namespace TraderConsole
             Conn.Close();
         }
 
+        public static void UpdateUser(int id, string Brand, string Type, string Color)
+        {
+            Conn.Open();
+            string sql = "UPDATE `cars` SET `Brand` = @brand, `Type` = @Type, `Color` = @color WHERE `id` = @id";
+            MySqlCommand cmd = new MySqlCommand(sql, Conn);
+
+            cmd.Parameters.AddWithValue("@brand", Brand);
+            cmd.Parameters.AddWithValue("@type", Type);
+            cmd.Parameters.AddWithValue("@color", Color);
+            cmd.Parameters.AddWithValue("@id", id);
+
+            cmd.ExecuteNonQuery();
+            Conn.Close();
+        }
+
         static void Main(string[] args)
         {
             
