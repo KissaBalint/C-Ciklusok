@@ -78,8 +78,66 @@ namespace TraderConsole
 
         static void Main(string[] args)
         {
-            
-          
+            while (true)
+            {
+
+                Console.WriteLine("1. Lekérdezés");
+                Console.WriteLine("2. Beszúrás");
+                Console.WriteLine("3. Módosítás");
+                Console.WriteLine("4. Törlés");
+                Console.WriteLine("5. Kilépés");
+                Console.Write("Válassz menüpontot: ");
+                byte menu = byte.Parse(Console.ReadLine());
+
+
+                switch (menu)
+                {
+                    case 1: Console.Clear(); ReadData(); Console.Clear(); break;
+                    case 2:
+                        #region bekeres
+                        Console.Clear();
+
+                        Console.Write($"Kérem a márkat: ");
+                        string brand = Console.ReadLine();
+
+                        Console.Write($"Kérem a típust: ");
+                        string type = Console.ReadLine();
+
+                        Console.Write($"Kérem a színt: ");
+                        string color = Console.ReadLine();
+                        #endregion 
+                        InsertData(brand, type, color); Console.Clear(); break;
+                    case 3:
+                        Console.Clear();
+                        #region bekeres
+                        Console.Clear();
+
+                        Console.Write($"Kérem az azonosítót: ");
+                        int id1 = int.Parse(Console.ReadLine());
+
+                        Console.Write($"Kérem a márkát: ");
+                        string brand1 = Console.ReadLine();
+
+                        Console.Write($"Kérem az típust: ");
+                        string type1 = Console.ReadLine();
+
+                        Console.Write($"Kérem a színt: ");
+                        string color1 = Console.ReadLine();
+                        #endregion 
+                        UpdateCar(id1, brand1, type1, color1); Console.Clear(); break;
+                    case 4:
+                        Console.Clear();
+                        #region bekeres
+                        Console.Write("Kérem a törlendő user Id-jét: ");
+                        int id = int.Parse(Console.ReadLine());
+                        #endregion
+                        DeleteCar(id); Console.Clear(); break;
+                    case 5: System.Environment.Exit(0); break;
+                    default: Console.Clear(); Console.WriteLine("Nincs ilyen menüpont! A felsorolt menüpontok közül válasszon!"); break;
+                }
+            }
+
+
         }
     }
 }
