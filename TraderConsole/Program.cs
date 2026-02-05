@@ -45,7 +45,7 @@ namespace TraderConsole
             Conn.Close();
         }
 
-        public static void UpdateUser(int id, string Brand, string Type, string Color)
+        public static void UpdateCar(int id, string Brand, string Type, string Color)
         {
             Conn.Open();
             string sql = "UPDATE `cars` SET `Brand` = @brand, `Type` = @Type, `Color` = @color WHERE `id` = @id";
@@ -59,6 +59,22 @@ namespace TraderConsole
             cmd.ExecuteNonQuery();
             Conn.Close();
         }
+
+        public static void DeleteCar(int id)
+        {
+            Conn.Open();
+
+            string sql = "DELETE FROM cars WHERE Id = @id";
+
+            MySqlCommand cmd = new MySqlCommand(sql, Conn);
+
+            cmd.Parameters.AddWithValue("@id", id);
+
+            cmd.ExecuteNonQuery();
+
+            Conn.Close();
+        }
+
 
         static void Main(string[] args)
         {
