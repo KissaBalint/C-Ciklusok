@@ -16,7 +16,7 @@ namespace TraderConsole
         public static void InsertData(string brand, string type, string color)
         {
             Conn.Open();
-            string sql = "INSERT INTO `cars` (`Brand`,`Type`,`Color`) VALUES (@brand, @type, @password)";
+            string sql = "INSERT INTO `cars` (`Brand`,`Type`,`Color`) VALUES (@brand, @type, @color)";
 
             MySqlCommand cmd = new MySqlCommand(sql,Conn);
 
@@ -29,9 +29,26 @@ namespace TraderConsole
             Conn.Close();
         }
 
+        public static void ReadData()
+        {
+            Conn.Open();
+            string sql = "SELECT * FROM cars";
+            MySqlCommand cmd = new MySqlCommand(sql, Conn);
+
+            MySqlDataReader dr = cmd.ExecuteReader();
+
+            while (dr.Read())
+            {
+                Console.WriteLine($"Id: {dr.GetInt32(0)}, Brand: {dr.GetString(1)}, Type: {dr.GetString(2)}, Color: {dr.GetString(3)},  RegTime: {dr.GetDateTime(5)}");
+            }
+            Console.ReadKey();
+            Conn.Close();
+        }
+
         static void Main(string[] args)
         {
             
+          
         }
     }
 }
